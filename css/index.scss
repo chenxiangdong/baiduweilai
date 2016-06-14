@@ -1,1277 +1,544 @@
-babody,html,h1,h2,h3,h4,h5,h6,p,ul,li,ol,dl,dt,dd,img,pre{
+@font-face {
+  font-family: "moren"
+  src="../font/fontawesome-webfont_fdf491c.woff"
+}
+*{
   padding: 0;
   margin: 0;
   list-style: none;
-}
-a{
   text-decoration: none;
-  color:#333;
+  font-family: "moren";
 }
-@font-face{
-  font-family: "fontawesome-webfont";
-  src:url(../fonts/fontawesome-webfont_fdf491c.woff);
-}
-body,html{
-  width: 100%;
-  height:100%;
-  font-family: "fontawesome-webfont";
-}
-/*默认*/
-%posi{
-  position: absolute;
-  margin:auto;
-  top:0;
-  left:0;
-}
-/*导航*/
-#nav_wrapping{
-  width: 100%;
-  height:140px;
-  .nav{
-    width: 98%;
-    height:100px;
-    margin: 0 auto;
-  }
-}
-#nav_wrapping .nav{
-  #nav_logo{
-    float: left;
+.toubu{
+  max-width: 1349px;
+  height: 100px;
+  margin-left: 30px;
+  margin-right: 25px;
+  position: relative;
+  .zuo{
     width: 260px;
-    height:56px;
-    background: url(../img/standerd_logo.png) center center no-repeat;
+    height: 56px;
+    position: absolute;
+    left: 0;
+    top: 20px;
+    background: url(http://static.store.baidu.com/static/common/widget/nav/images/standerd_logo_1x_6d56ff5.png) no-repeat;
   }
-  #nav_right{
-    float: right;
-    width: 661px;
-    height:100px;
-    #nav_search{
-      float: left;
+  .you{
+    width: 595px;
+    height: 100px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    input{
       width: 300px;
-      height:100px;
-      position: relative;
-      input{
-        position: absolute;
-        width: 298px;
-        height:38px;
-        border:1px solid #ccc;
-        top:30px;
-        left:0;
-      }
-      #nav_search_sea{
-        position: absolute;
-        top:42px;
-        right:10px;
-        width: 15px;
-        height:15px;
-        background: url(../img/search_e6fe07d.png) no-repeat;
-      }
-    }
-  }
-}
-%nav_user{
-  float:left;
-  width: 22px;
-  height:22px;
-  margin-top: 39px;
-  margin-left: 5px;
-}
-#nav_user{
-  width: 140px;
-  height:100px;
-  float: left;
-  margin-left: 10px;
-  &:hover{
-    .userlist{
-      transform: rotate(180deg);
-      background: url(../img/new_nav_db768b3.png) 6px -12px no-repeat;
-    }
-  }
-  .photo{
-    border-radius: 50%;
-    @extend %nav_user;
-    background: url(../img/photo.jpg);
-  }
-  .username{
-    float:left;
-    width: auto;
-    height:22px;
-    margin-top: 39px;
-    margin-left: 5px;
-    line-height: 22px;
-    font-size: 12px;
-  }
-  .userlist{
-    @extend %nav_user;
-    background: url(../img/new_nav_db768b3.png) 6px -14px no-repeat;
-    transition: transform .4s ease-in-out;
-  }
-}
-.nav_span{
-  float:left;
-  width: 1px;
-  height:16px;
-  background: #666;
-  margin: 42px 2px;
-}
-.list{
-  padding: 0 20px;
-  display: inline-block;
-  font-size: 12px;
-  color: #666;
-}
-#nav_my_order{
-  float:left;
-  width: auto;
-  height:22px;
-  line-height: 22px;
-  font-size: 12px;
-  margin-top: 39px;
-  margin-left: 4px;
-}
-#nav_you{
-  width: 210px;
-  height:100px;
-  float:right;
-  #nav_cart{
-    height:22px;
-    padding-left: 44px;
-    background: url(../img/new_nav_db768b3.png) no-repeat -9px 3px;
-    color: #333;
-    display: inline-block;
-    font-size: 12px;
-    line-height: 22px;
-    margin-top:39px;
-  }
-}
-.nav_list{
-  width: 100%;
-  height:40px;
-  #nav_bars{
-    background-color: #333;
-    text-align: center;
-    display: block;
-    clear:both;
-    content:'';
-    height: 40px;
-    li{
-      width: auto;
-      display: inline-block;
-      padding: 0 35px;
-      height:40px;
-      color:#ddd;
-      line-height: 40px;
-      font-size: 14px;
+      height: 40px;
+      position: absolute;
+      top: 30px;
+      left: 0;
+      border-style: none;
+      outline-style: none;
+      border:1px solid rgb(229, 229, 229);
+      border-radius: 3%;
+      font-size: 12px;
       &:hover{
-        background: #222;
-        color: #fff;
+        border: 1px solid rgb(153, 153, 153);
       }
     }
-    .active{
-      background: #222;
-      color: #fff;
+    span{
+      background: url(http://static.store.baidu.com/static/common/widget/nav/images/search_e6fe07d.png) no-repeat;
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      left: 280px;
+      top: 47px;
+      cursor: pointer;
+    }
+    ul{
+      position: absolute;
+      width: 257px;
+      height: 100px;
+      right: 0;
+      top: 0;
+      li{
+        float: left;
+        height: 100%;
+        width: 85px;
+
+        a{
+          display: block;
+          font-size: 12px;
+          line-height: 22px;
+          margin-top: 39px;
+          color: #555;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+      li:nth-child(1) a{
+        background: url(http://static.store.baidu.com/static/common/widget/nav/images/nav_a375e22.png) no-repeat -272px -2px;
+        width: 24px;
+        height: 22px;
+        padding-left: 28px;
+        padding-right: 28px;
+        border-right: 1px solid rgb(137, 136, 138);
+      }
+      li:nth-child(2) a{
+        width: 48px;
+        height: 22px;
+        padding:0 20px;
+        text-align: center;
+        border-right: 1px solid rgb(137, 136, 138);
+      }
+      li:nth-child(3) a{
+        background: url(../img/1.png) no-repeat -7px 1px;
+        width: 36px;
+        height: 22px;
+        padding-left: 44px;
+      }
     }
   }
 }
-/*导航*/
-//轮播
-#nav_center_c{
-  width: 100%;
-  height:854px;
+.daohang{
+  max-width: 1349px;
+  height: 40px;
+  background: #333;
+  ul{
+    width: 512px;
+    height: 40px;
+    margin: 0 auto;
+    li{
+      float: left;
+      height: 40px;
+      padding: 0 35px;
+      a{
+        color: #fff;
+        font-weight: bold;
+        display: inline-block;
+        height: 100%;
+        line-height: 40px;
+        font-size: 13px;
+      }
+    }
+    li:nth-child(1){
+      background: #222;
+    }
+  }
 }
-#center-l{
-  width: 60%;
-  height:856px;
-  float:left;
-  .center_x{
-    width: 100%;
-    height:100%;
-    overflow: hidden;
-    @for $i from 1 through 4{
-      .center_a:nth-child(#{$i}){
+.bao{
+  &::after{
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .lunbo{
+    width: 809px;
+    height: 607px;
+    background: red;
+    float: left;
+    position: relative;
+    .tupian{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      li{
         width: 100%;
-        height:100%;
-        transition: transform .6s ease-in-out;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        background-size: 809px 607px;
+        top: 0;
+        transform: scale(1,1);
+        transition: transform .8s ease;
         &:hover{
           transform: scale(1.1,1.1);
         }
-        background: url('../img/lunbo'+ $i+'.jpg');
+      }
+      li:nth-child(1){
+        background-image: url(http://fs.store.baidu.com/dulife/570db7542bfc2.jpg);
+      }
+      li:nth-child(2){
+        background-image: url(http://fs.store.baidu.com/dulife/56dd272259724.jpg);
+      }
+      li:nth-child(3){
+        background-image: url(http://fs.store.baidu.com/dulife/570db5f05b0f0.jpg);
+      }
+      li:nth-child(4){
+        background-image: url(http://fs.store.baidu.com/dulife/5715f35a8b04a.jpg);
+      }
+    }
+    a{
+      display: block;
+      border-radius: 50%;
+      position: absolute;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      width: 60px;
+      height: 60px;
+    }
+    #zuo{
+      left: 20px;
+      background: url(http://static.store.baidu.com/static/home/images/dir_9a54e55.png) no-repeat;
+    }
+    #you{
+      right: 20px;
+      background: url(http://static.store.baidu.com/static/home/images/dir_9a54e55.png) no-repeat -90px 0;
+    }
+    .dian{
+      width: 200px;
+      height: 10px;
+      position: absolute;
+      margin: auto;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      li{
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 1px solid #fff;
+        box-sizing: border-box;
+        float: left;
+        margin-left: 20px;
+      }
+      li:nth-child(4){
+        background: #fff;
       }
     }
   }
-  #center_b{
-    position: absolute;
-    margin: 0 auto;
-    bottom:20px;
-    left:0;
-    right:0;
-    width: 200px;
-    height:20px;
-    li{
-      margin-left: 20px;
-      width: 10px;
-      height:10px;
-      border-radius: 50%;
-      border:1px solid #ccc;
-      float:left;
-    }
-    li:nth-child(1){
-      background: #fff;
-    }
-  }
-  #center_left{
-    border-radius: 50%;
-    width:60px;
-    height:60px;
-    @extend %posi;
-    bottom:0;
-    background: url(../img/dir_9a54e55.png);
-    cursor: pointer;
-    transition: opacity .3s ease-in-out;
-    background-color: #555;
-    opacity: 0.4;
-    &:hover{
-      opacity: 0.7;
-      background-color: #333;
-    }
-  }
-  #center_right{
-    border-radius: 50%;
-    width:60px;
-    height:60px;
-    position: absolute;
-    margin:auto;
-    top:0;
-    right:0;
-    bottom:0;
-    background: url(../img/dir_9a54e55.png) 62px;
-    cursor: pointer;
-    transition: opacity .3s ease-in-out;
-    background-color: #555;
-    opacity: 0.4;
-    &:hover{
-      opacity: 0.7;
-      background-color: #333;
-    }
-  }
-}
-#center_r{
-  width: 40%;
-  height:856px;
-  float:left;
-  #center_r_up{
-    width: 100%;
-    height:571px;
+  .xn{
+    float: left;
     overflow: hidden;
-    #center_up_s{
-      width: 100%;
-      height:100%;
-      transition: transform .6s ease-in-out;
-      background:url(../img/you1.jpg);
+    .xiaoniu{
+      width: 539px;
+      height: 404px;
+      background: url(http://fs.store.baidu.com/dulife/5719f8247dad1.jpg);
+      background-size: 539px 404px;
+      transform: scale(1,1);
+      transition: transform .8s ease;
       &:hover{
         transform: scale(1.1,1.1);
       }
     }
   }
-  #center_r_down{
-    width: 100%;
-    height:285px;
-    #center_down_l{
-      float:left;
-      height:100%;
-      width:50%;
-      overflow: hidden;
-      #center_d_l{
-        width: 100%;
-        height:100%;
-        background: url(../img/you3.jpg);
-        transition: transform .6s ease-in-out;
-        &:hover{
-          transform: scale(1.1,1.1);
-        }
-      }
-    }
-    #center_down_r{
-      float: left;
-      height:100%;
-      width:50%;
-      overflow: hidden;
-      #center_d_r{
-        width: 100%;
-        height:100%;
-        background: url(../img/you2.jpg);
-        transition: transform .6s ease-in-out;
-        &:hover{
-          transform: scale(1.1,1.1);
-        }
-      }
-    }
-  }
-}
-//轮播
-//轮播下
-#article{
-  width:62.5%;
-  height:160px;
-  margin: 60px auto;
-  padding-bottom:60px;
-  border-bottom: 1px solid #e9e9e9;
-  #art_left{
-    float:left;
-    width: 300px;
-    height:160px;
-    background:url(../img/art.jpg)center center no-repeat;
-    background-size:300px;
-    cursor: pointer;
-  }
-  #art_center{
-    margin-left: 30px;
-    float:left;
-    width:420px;
-    vertical-align: top;
-    height:auto;
-    padding-right: 40px;
-    border-right: 1px solid #e9e9e9;
-    h3{
-      a{
-        font-size: 24px;
-        &:hover{
-          text-decoration: underline;
-        }
-      }
-    }
-    span{
-      font-size: 12px;
-    }
-  }
-  #art_right{
-    float:left;
-    width: 340px;
-    height:142px;
-    margin: 23px 0 0 40px;
-    a{
-      outline: 0;
-      color: #555;
-      p{
-        font-size: 14px;
-        width: 100%;
-        height:20px;
-        line-height: 20px;
-        padding: 4px 0;
-        &:hover{
-          text-decoration: underline;
-        }
-        &:before{
-          content: "·";
-          display: inline-block;
-          margin-right: 5px;
-        }
-      }
-    }
-  }
-}
-/*中间四层*/
-.glookblock{
-  width: 63.1%;
-  height:581px;
-  margin: 40px auto;
-  border-bottom: 1px solid #e9e9e9;
-  .glook_header{
-    width:220px;
-    height:540px;
-    cursor: pointer;
-    float:left;
-  }
-  .glook_bodyer{
-    width: 980px;
-    height:540px;
-    float:left;
-    .gb_left{
-      float:left;
-      width: 238px;
-      position: relative;
-      cursor: pointer;
-      height:540px;
-      border-right: 1px solid #e9e9e9;
-      .gb_left_up{
-        position: relative;
-        width: 238px;
-        cursor: pointer;
-        height:269px;
-        border-bottom:1px solid #e9e9e9;
-      }
-      .gb_left_down{
-        position: relative;
-        width: 238px;
-        cursor: pointer;
-        height:269px;
-      }
-    }
-    .gb_center{
-      float:left;
-      cursor: pointer;
-      width: 478px;
-      position: relative;
-      height:540px;
-      border-right: 1px solid #e9e9e9;
-    }
-    .gb_right{
-      float:left;
-      width: 238px;
-      height:540px;
-      .gb_right_up{
-        width: 238px;
-        position: relative;
-        cursor: pointer;
-        height:269px;
-        border-bottom:1px solid #e9e9e9;
-      }
-      .gb_right_down{
-        position: relative;
-        width: 238px;
-        height:269px;
-        cursor: pointer;
-      }
-    }
-  }
-}
-.glookblock .glook_bodyer{
-  .gb_left{
-    .gb_left_up{
-      img{
-        position: absolute;
-        right:5px;
-        bottom:10px;
-        width: 138px;
-        height:138px;
-        transition: right .6s ease-in-out;
-        &:hover{
-          right:30px;
-        }
-      }
-      h3{
-        overflow: hidden;
-        display: block;
-        padding: 10px 20px 0;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        max-width: 100%;
-        font-size: 16px;
-        text-align: left;
-      }
-      h4{
-        padding: 10px 20px 0;
-        margin: 11px 0 2px -5px;
-        font-size: 16px;
-        text-align: left;
-        position: relative;
-        z-index: 22;
-      }
-      span{
-        width: 48px;
-        background: red;
-        margin-left: 20px;
-        display: block;
-        text-align: center;
-        line-height: 19px;
-        font-size: 12px;
-        font-weight: 400;
-        position: relative;
-        z-index: 22;
-        color:#fff;
-      }
-    }
-    .gb_left_down{
-      img{
-        position: absolute;
-        right:5px;
-        bottom:10px;
-        width: 138px;
-        height:138px;
-        transition: right .6s ease-in-out;
-        &:hover{
-          right:30px;
-        }
-      }
-      h3{
-        overflow: hidden;
-        padding: 10px 20px 0;
-        display: block;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        max-width: 100%;
-        font-size: 16px;
-        text-align: left;
-      }
-      h4{
-        margin: 11px 0 2px -5px;
-        font-size: 16px;
-        padding: 10px 20px 0;
-        text-align: left;
-        position: relative;
-        z-index: 22;
-      }
-    }
-  }
-  .gb_center{
-    img{
-      position: absolute;
-      right:5px;
-      bottom:10px;
-      width: 350px;
-      height:350px;
-      transition: right .6s ease-in-out;
+  .xy{
+    float: left;
+    overflow: hidden;
+    .xiayi{
+      width: 269px;
+      height: 202px;
+      background: url(http://fs.store.baidu.com/dulife/570db7c678cad.jpg);
+      background-size: 269px 202px;
+      transform: scale(1,1);
+      transition: transform .8s ease;
       &:hover{
-        right:30px;
-      }
-    }
-    h3{
-      overflow: hidden;
-      display: block;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      max-width: 100%;
-      padding: 10px 20px 0;
-      font-size: 24px;
-      text-align: left;
-    }
-    h4{
-      margin: 11px 0 2px -5px;
-      font-size: 24px;
-      text-align: left;
-      padding: 10px 20px 0;
-      position: relative;
-      z-index: 22;
-    }
-  }
-  .gb_right{
-    .gb_right_up{
-      img{
-        position: absolute;
-        right:5px;
-        bottom:10px;
-        width: 138px;
-        height:138px;
-        transition: right .6s ease-in-out;
-        &:hover{
-          right:30px;
-        }
-      }
-      h3{
-        overflow: hidden;
-        display: block;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        max-width: 100%;
-        font-size: 16px;
-        padding: 10px 20px 0;
-        text-align: left;
-      }
-      h4{
-        margin: 11px 0 2px -5px;
-        font-size: 16px;
-        text-align: left;
-        padding: 10px 20px 0;
-        position: relative;
-        z-index: 22;
-      }
-    }
-    .gb_right_down{
-      img{
-        position: absolute;
-        right:5px;
-        bottom:10px;
-        width: 138px;
-        height:138px;
-        transition: right .6s ease-in-out;
-        &:hover{
-          right:30px;
-        }
-      }
-      h3{
-        overflow: hidden;
-        display: block;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        max-width: 100%;
-        font-size: 16px;
-        padding: 10px 20px 0;
-        text-align: left;
-      }
-      h4{
-        margin: 11px 0 2px -5px;
-        font-size: 16px;
-        text-align: left;
-        position: relative;
-        padding: 10px 20px 0;
-        z-index: 22;
+        transform: scale(1.1,1.1);
       }
     }
   }
-}
-.glookblock{
-  h3{
-    &:hover{
-      text-decoration: underline;
-    }
-  }
-}
-/*中间四层*/
-//悬浮音像
-#home{
-  background-color: #f6f6f6;
-  padding: 60px 0;
-  height:400px;
-  margin-top: -41px;
-  #home_h{
-    width: 63.1%;
-    height:100%;
-    margin: 0 auto;
-    #home_left{
-      width: 710px;
-      height: 400px;
-      cursor: pointer;
-      float:left;
-      background: url(../img/56f90e73e9449.jpg)
-    }
-    #home_right{
-      width:490px;
-      height:100%;
-      float:left;
-      h1{
-        a{
-          padding: 0 20px;
-          font-size: 30px;
-          color: #333;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          line-height: 1.2;
-          display: block;
-        }
-      }
-      #home_product{
-        span{
-          margin-left: 20px;
-          margin-top: 12px;
-          font-size: 12px;
-          line-height: 20px;
-          height: 60px;
-        }
-      }
-      #home_money{
-        width: 100%;
-        display: inline-block;
-        color: #ee3531;
-        margin: 17px 0;
-        font-family: verdana;
-        font-size: 18px;
-        h1{
-          margin-left: 20px;
-          float:left;
-          font-size: 16px;
-          line-height: 30px;
-          height:30px;
-        }
-        h2{
-          float:left;
-          font-size: 24px;
-          font-weight: 700;
-          height:30px;
-          line-height: 30px;
-          margin-left: 6px;
-        }
-      }
-      #home_buy{
-        width: 100%;
-        height:131px;
-        border-bottom: 1px solid #e9e9e9;
-        #home_b_buy{
-          margin-left: 20px;
-          width: 131px;
-          height:40px;
-          float:left;
-          border: 0;
-          text-align: center;
-          line-height: 40px;
-          background-color: #ee3531;
-          margin-bottom: 90px;
-          cursor: pointer;
-        }
-        #home_check{
-          width: 131px;
-          height:40px;
-          float:left;
-          text-align: center;
-          line-height: 40px;
-          background-color: #fff;
-          border: 1px solid #999;
-          width: 138px;
-          height: 38px;
-          color: #333;
-          margin-left: 15px;
-          cursor: pointer;
-        }
-      }
-      #home_suggest{
-        border-top: 1px solid #d7d7d7;
-        padding-top: 27px;
-        #home_photo{
-          width: 30px;
-          height:30px;
-          margin-left: 20px;
-          float:left;
-          img{
-            width: 30px;
-          }
-        }
-        span{
-          display: inline-block;
-          max-width: 265px;
-          vertical-align: middle;
-          max-height: 41px;
-          overflow: hidden;
-          font-size: 16px;
-        }
-        #discuss{
-          margin-left: 100px;
-          width: 140px;
-          height: 40px;
-          line-height: 38px;
-          text-align: center;
-          font-size: 16px;
-          display: inline-block;
-          margin-bottom: 75px;
-          border-radius: 3px;
-          background: #333;
-          color:#fff;
-          font-weight: bold;
-          cursor: pointer;
-        }
+  .xr{
+    overflow: hidden;
+    float: left;
+    .xiaer{
+      width: 269px;
+      height: 202px;
+      background: url(http://fs.store.baidu.com/dulife/5710e8196457d.jpg);
+      background-size: 269px 202px;
+      transform: scale(1,1);
+      transition: transform .8s ease;
+      &:hover{
+        transform: scale(1.1,1.1);
       }
     }
-  }
-}
-//悬浮音像
-/*未来商店*/
-.dreamshop_warpping{
-  width:100%;
-  height:1047px;
-  .dreamshop{
-    width: 65.5%;
-    height:1000px;
-    margin: 0 auto;
-    padding-left: 0;
-    .dreamshop_up{
-      background-color: #f6f6f6;
-      display: inline-block;
-      width: 380px;
-      margin: 30px 30px 0 0;
-      position: relative;
-      vertical-align: top;
-    }
-  }
-}
-.dreamshop_up{
-  position: relative;
-  .ds_img_1{
-    width:380px;
-    height:288px;
-    cursor: pointer;
   }
 
-  .ds_d_photo{
-    width: 60px;
-    height:60px;
-    position: absolute;
-    bottom:120px;
-    left:30px;
-    background: url(../img/logo20150710.png);
-    background-size: 60px;
-    cursor: pointer;
-  }
-  .ds_up_1{
-    .ds_up_1_left{
-      color: #999;
-      font-size: 12px;
-      vertical-align: 10px;
-      display: inline-block;
-      margin-left: 100px;
-    }
-    .ds_xin{
-      float:right;
-      color: #999;
-      font-size: 12px;
-      margin: 8px 6px 0 15px;
-      display: inline-block;
-      &:before{
-        content: "\f004";
-        display: inline-block;
-      }
-    }
-    .ds_discuss{
-      display: inline-block;
-      float:right;
-      color: #999;
-      font-size: 12px;
-      margin: 8px 7px 0 15px;
-      .dis_photo{
-        width: 15px;
-        height:15px;
-        display: inline-block;
-        background: url(../img/new-comment-icon_ed4c7c0.png) no-repeat 0 0;
-        &:after{
-          content:'5';
-          margin-left: 17px;
-        }
-      }
-    }
-  }
-  h5{
-    color: #333;
-    font-size: 16px;
-    line-height: 26px;
-    margin: 20px 0 10px;
-    padding-left:20px;
-    width: 100%;
-    vertical-align: middle;
-    cursor: pointer;
-    &:hover{
-      text-decoration: underline;
-    }
-  }
-  h6{
-    color: #666;
-    font-size: 12px;
-    line-height: 1.5em;
-    height: 37px;
-    overflow: hidden;
-    word-break: break-all;
-    padding-left:20px;
-  }
-  .time{
-    color: #999;
-    font-size: 12px;
-    line-height: 12px;
-    padding-left:20px;
-    margin: 18px 0 25px;
-  }
 }
-.dreamshop_up{
-    .ds_img_1{
-      img{
-        width: 380px;
-        height:288px;
-      }
-    }
-    .ds_d_photo{
-      img{
-        width: 60px;
-        height:60px;
-      }
-    }
-}
-.dreamshop_warpping .home-video-more{
-  width: 178px;
-  height: 33px;
-  line-height: 33px;
-  background-color: #fff;
-  border: 1px solid #999;
-  border-radius: 3px;
-  color: #666;
-  font-size: 13px;
-  text-align: center;
-  display: block;
-  margin: 30px auto 0;
-  &:after{
-    background: url(http://static.store.baidu.com/static/home/images/right_fd4fd2f.png) no-repeat;
-    content: "";
-    width: 5px;
-    height: 9px;
-    line-height: 9px;
-    display: inline-block;
-    margin-left: 5px;
-    margin-top: -2px;
-  }
-}
-/*未来商店*/
-/*商店视频*/
- .home_video_warpping{
-   width: 100%;
-   height:662px;
-   background: #e9e9e9;
-   .home_video_photo{
-     width: 63.1%;
-     height:477px;
-     margin: 0 auto;
-     padding: 60px 0 0 0;
-     .hv_p_left{
-       width: 236px;
-       height:100%;
-       float:left;
-       .hv_p_l_up{
-          display: inline-block;
-          width: 236px;
-          height: 236px;
-          position: relative;
-          font-size: 16px;
-          overflow: hidden;
-          margin-bottom: 5px;
-          float: left;
-          img{
-            width: 236px;
-          }
-       }
-       .hv_p_l_down{
-          display: inline-block;
-          width: 236px;
-          height: 236px;
-          position: relative;
-          font-size: 16px;
-          overflow: hidden;
-          margin-bottom: 5px;
-          float: left;
-          img{
-            width: 236px;
-          }
-       }
-     }
-     .hv_p_center{
+.deng{
+  border-bottom: 1px solid rgb(233,233,233);
+  max-width: 1200px;
+  height: 160px;
+  padding-bottom: 60px;
+  margin: 60px auto;
+  .d_zuo{
+    width: 790px;
+    height: 160px;
+    border-right: 1px solid #e9e9e9;
+    float: left;
+    .d_tu{
+      a{
+        display: block;
+        width: 300px;
+        height: 160px;
+        margin-right: 30px;
         float: left;
-        width: 477px;
-        height: 477px;
-        margin-right: 5px;
-        margin-left: 5px;
-        overflow: hidden;
-        position: relative;
-        img{
-          width: 477px;
-        }
-     }
-     .hv_p_right{
-        width: 477px;
-        height: 477px;
-        display: inline-block;
-        position: relative;
-        overflow: hidden;
-        .hv_p_r_up1{
+        background: url(http://fs.store.baidu.com/dulife/5715d8b915b05.jpg);
+        background-size: 300px 160px;
+      }
+    }
+    .d_z{
+      p:nth-child(1){
+        width: 430px;
+        height: 26px;
+        margin-top: 30px;
+        margin-bottom: 12px;
+        float: left;
+        a{
           display: inline-block;
-          width: 236px;
-          height: 236px;
-          position: relative;
-          font-size: 16px;
-          overflow: hidden;
-          margin-bottom: 5px;
-          float: left;
-          margin-left: 5px;
-          img{
-            width: 236px;
-          }
-        }
-        .hv_p_r_up2{
-          display: inline-block;
-          width: 236px;
-          height: 236px;
-          position: relative;
-          font-size: 16px;
-          overflow: hidden;
-          margin-bottom: 5px;
-          float: left;
-          img{
-            width: 236px;
-          }
-        }
-        .hv_p_r_down{
-          width: 477px;
-          height: 236px;
-          float: left;
-          img{
-            width: 477px;
-          }
-        }
-     }
-   }
- }
- .home_video_warpping .home-video-more{
-   width: 178px;
-   height: 33px;
-   line-height: 33px;
-   background-color: #fff;
-   border: 1px solid #999;
-   border-radius: 3px;
-   color: #666;
-   font-size: 13px;
-   text-align: center;
-   display: block;
-   margin: 30px auto 0;
-   &:after{
-     background: url(http://static.store.baidu.com/static/home/images/right_fd4fd2f.png) no-repeat;
-     content: "";
-     width: 5px;
-     height: 9px;
-     line-height: 9px;
-     display: inline-block;
-     margin-left: 5px;
-     margin-top: -2px;
-   }
- }
- .home_video_warpping{
-   h2{
-      overflow: hidden;
-      width: 100%;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      padding: 0 55px 0 15px;
-      box-sizing: border-box;
-      background: url(../img/play_e587951.png) no-repeat 193px center;
-      background-color: rgba(0,0,0,0.4);
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 44px;
-      line-height: 44px;
-      color: #fff;
-      font-size: 16px;
-      text-align: left;
-      letter-spacing: 1px;
-      &:hover{
-        text-decoration: underline;
-      }
-   }
- }
- .home_video_warpping{
-    .hv_p_center{
-      h2{
-        background: url(../img/play_e587951.png) no-repeat 423px center;
-        background-color: rgba(0,0,0,0.4);
-      }
-    }
-    .hv_p_r_down{
-      h2{
-        background: url(../img/play_e587951.png) no-repeat 423px center;
-        background-color: rgba(0,0,0,0.4);
-      }
-    }
- }
-/*商店视频*/
-/*品牌*/
-  .coo_warpping{
-    width: 64%;
-    height:240px;
-    margin: 0 auto;
-    padding: 70px 0;
-    li{
-      float: left;
-      margin-right: 45px;
-      width: 90px;
-      height: 90px;
-      text-align: center;
-      margin-top: 30px;
-      position: relative;
-    }
-    .co_apply{
-      float: left;
-      margin-right: 45px;
-      width: 90px;
-      height: 90px;
-      text-align: center;
-      margin-top: 30px;
-      position: relative;
-      background: #000;
-      color:#fff;
-      font-size: 18px;
-      div{
-        font-size: 25px;
-        padding-top: 10px;
-      }
-    }
-  }
-  @for $i from 1 through 17{
-    .coo_warpping li:nth-child(#{$i}){
-      background: url('../img/jpg/'+ $i+'.png')center center no-repeat;
-      background-size: 90px;
-      cursor: pointer;
-    }
-  }
-/*品牌*/
-/*footer*/
-.footer{
-  width: 100%;
-  height:300px;
-  background: #222;
-  .footer_up{
-    width: 100%;
-    height:120px;
-    .footer_up_warpping{
-      width: 63.1%;
-      height:100%;
-      margin: 0 auto;
-      border-bottom:1px solid #333;
-      .footer_warpping{
-        width: 1000px;
-        height:100%;
-        margin: 0 auto;
-        li{
-          display: inline-block;
-          padding-left: 55px;
-          margin-right: 100px;
-          float:left;
-          color:#fff;
-          font-size: 16px;
-          line-height:120px;
-        }
-        li:nth-child(1){
-          background: url(../img/footer_a84db08.png) center center no-repeat;
-          background-position: -5px 35px;
-        }
-        li:nth-child(2){
-          background: url(../img/footer_a84db08.png) center center no-repeat;
-          background-position: -4px -56px;
-        }
-        li:nth-child(3){
-          background: url(../img/footer_a84db08.png) center center no-repeat;
-          background-position: -4px -163px;
-        }
-        li:nth-child(4){
-          background: url(../img/footer_a84db08.png) center center no-repeat;
-          background-position: -4px -266px;
-        }
-      }
-    }
-  }
-  .footer_down{
-    height:149px;
-    width: 100%;
-    .footer_down_warpping{
-      margin-top: 34px;
-      width: 1000px;
-      padding-bottom: 36px;
-      height:113px;
-      margin: 0 auto;
-      .footer_down_left{
-        display: inline-block;
-        max-width: 537px;
-        padding-right: 60px;
-        padding: 25px 60px 30px 0;
-        text-align: right;
-        color:#555;
-        .tel{
-          padding: 30px 60px 25px 0;
-          font-size: 18px;
-          line-height: 21px;
-          span{
-            display: inline-block;
-            font-size: 12px;
-          }
-        }
-        .info{
-          height:24px;
-          margin-top: -10px;
-          span{
-            float:left;
-            font-size: 12px;
-            line-height: 24px;
-            margin-left: -10px;
-            padding-right: 5px;
-          }
-          a{
-            float:left;
-            font-size: 12px;
-            line-height: 24px;
-            line-height: 24px;
-            padding: 0 5px;
-            &:hover{
-              color:#fff;
-            }
+          width: 100%;
+          height: 100%;
+          color: #222;
+          font-size: 24px;
+          // font-weight: bold;
+          font-family:'Microsoft YaHei';
+          &:hover{
+            text-decoration: underline;
           }
         }
       }
-      .footer_down_right{
-        display: inline-block;
-        width: 324px;
-        padding-left: 56px;
+      p:nth-child(2){
+        float: left;
+        width: 420px;
+        height: 72px;
         font-size: 12px;
-        color: #fff;
-        border-left:1px solid #333;
-        margin-top: 20px;
-        vertical-align: top;
-        .footer_down_r{
-          width: 380px;
-          height:113px;
-          float:left;
-          .f_focus_us_txt{
-            text-align: left;
-            color:#555;
-          }
-          .f_focus_icon{
-            .f_tieba{
-              display: inline-block;
-              width: 42px;
-              height: 42px;
-              margin-right: 9px;
-              margin-top: 20px;
-              vertical-align: middle;
-              cursor: pointer;
-              background: url(../img/weibo_fff8cde.png);
-              background-position: -104px 0;
-              &:hover{
-                background-position: -281px 0;
-              }
-            }
-            .weixin{
-              display: inline-block;
-              position: relative;
-              width: 42px;
-              height: 42px;
-              margin-right: 9px;
-              cursor: pointer;
-              margin-top: 20px;
-              vertical-align: middle;
-              background: url(../img/weibo_fff8cde.png);
-              img{
-                position: absolute;
-                top: -120px;
-                opacity: 0;
-                transition: opacity .6s ease-in-out;
-                left: -34px;
-                cursor: pointer;
-                width: 110px;
-                height: 110px;
-                margin-left: 0;
-                white-space: nowrap;
-                max-width: 220px;
-                max-height: 220px;
-              }
-              &:hover{
-                background-position: -177px 0;
-                img{
-                  opacity: 1;
-                }
-              }
-            }
-            .weibo{
-              display: inline-block;
-              width: 42px;
-              height: 42px;
-              margin-right: 9px;
-              cursor: pointer;
-              margin-top: 20px;
-              vertical-align: middle;
-              background: url(../img/weibo_fff8cde.png);
-              background-position: -52px 0;
-              &:hover{
-                background-position: -229px 0;
-              }
-            }
-            .img{
-              width: 111px;
-              cursor: pointer;
-              height: 111px;
-              margin-left: 48px;
-              vertical-align: middle;
-            }
-          }
+        color: rgb(51,51,51);
+        font-family:'Microsoft YaHei';
+        line-height: 18px;
+      }
+    }
+  }
+  .d_u{
+    float: left;
+    width: 340px;
+    height: 112px;
+    margin-left: 40px;
+    margin-top: 23px;
+    li{
+      list-style: disc;
+      width: 100%;
+      height: 28px;
+      a{
+        display: inline-block;
+        font-family:'Microsoft YaHei';
+        width: 100%;
+        height: 100%;
+        color: rgb(85,85,85);
+        font-size: 14px;
+        &:hover{
+          text-decoration: underline;
         }
       }
     }
   }
 }
-/*footer*/
+.yilou{
+  width: 1200px;
+  height: 540px;
+  padding: 40px 0;
+  margin: 0 auto;
+  border-bottom: 1px solid rgb(233,233,233);
+  .shu_tu{
+    width: 220px;
+    height: 540px;
+    float: left;
+    cursor: pointer;
+  }
+  .shu_k{
+    width: 980px;
+    height: 100%;
+    float: left;
+    position: relative;
+    li{
+      width: 197px;
+      height: 229px;
+      float: left;
+      padding: 20px;
+      a{
+        display: block;
+        width: 198px;
+        height: 229px;
+        font-family: 'Microsoft YaHei';
+        color: rgb(51,51,51);
+        font-size: 16px;
+        position: relative;
+        p{
+          font-family: 'Microsoft YaHei';
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+        span{
+          display: inline-block;
+          margin-top: 11px;
+          margin-left: 5px;
+          margin-bottom: 2px;
+          line-height: 24px;
+          font-weight: bold;
+        }
+        .remai{
+          position: absolute;
+          top: 60px;
+          left: 5px;
+          display: inline-block;
+          padding: 3px 10px;
+          background: rgb(238, 53, 49);
+          font-family: 'Microsoft YaHei';
+          font-size: 12px;
+          color: #fff;
+          z-index: 5;
+        }
+        img{
+          width: 138px;
+          height: 138px;
+          position: absolute;
+          bottom: 16px;
+          right: 10px;
+          transition: transform .6s ease;
+          &:hover{
+            transform: translateX(-20px);
+          }
+        }
+      }
+    }
+    li:nth-child(1),li:nth-child(3){
+      border-bottom: 1px solid rgb(233,233,233);
+    }
+    li:nth-child(5){
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+    li:nth-child(2){
+      width: 428px;
+      height: 500px;
+      padding: 20px 25px;
+      border-left: 1px solid rgb(233,233,233);
+      border-right: 1px solid rgb(233,233,233);
+      a{
+        display: block;
+        width: 428px;
+        height: 500px;
+        p{
+          color: rgb(51,51,51);
+          font-size: 24px;
+          line-height: 36px;
+        }
+        span{
+          display: inline-block;
+          margin-top: 16px;
+          margin-left: 5px;
+          margin-bottom: 4px;
+          font-size: 16px;
+        }
+        img{
+          width: 350px;
+          height: 350px;
+        }
+      }
+    }
+  }
+}
+#yilou{
+  background-image: url(http://fs.store.baidu.com/dulife/57105b06ed534.jpg);
+}
+#erlou{
+  background-image: url(http://fs.store.baidu.com/dulife/5653dea646371.jpg);
+}
+#sanlou{
+  background-image: url(http://fs.store.baidu.com/dulife/5653deb2f36f9.jpg);
+}
+#silou{
+  background-image: url(http://fs.store.baidu.com/dulife/5653ded82e6f8.jpg);
+}
+.yinxiang{
+  width: 1349px;
+  height: 400px;
+  margin: -41px auto;
+  padding: 60px 0;
+  background: rgb(246,246,246);
+  .yinxiang_k{
+    width: 1200px;
+    height: 400px;
+    margin: 0 auto;
+    .yx_tu{
+      width: 710px;
+      height: 400px;
+      float: left;
+      position: relative;
+      background: url(http://fs.store.baidu.com/dulife/56f90e73e9449.jpg);
+      .yx_t{
+        width: 21px;
+        height: 42px;
+        position: absolute;
+        z-index: 5;
+        right: 0;
+        top: 50%;
+        background: url(http://static.store.baidu.com/static/home/images/direction_586dc6f.png) no-repeat;
+      }
+    }
+    .yx_z{
+      float: right;
+      width: 465px;
+      height: 367px;
+      position: relative;
+      p:nth-child(1) a{
+        display: block;
+        width: 465px;
+        height: 36px;
+        font-family: 'Microsoft YaHei';
+        font-size: 30px;
+        color: rgb(51,51,51);
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+      p:nth-child(2){
+        margin-top: 12px;
+        width: 465px;
+        height: 60px;
+        font-size: 12px;
+        font-family: 'Microsoft YaHei';
+        color: rgb(51,51,51);
+        line-height: 20px;
+      }
+      span{
+        display: inline-block;
+        margin: 17px 0;
+        font-size: 24px;
+        color: rgb(238, 53, 49);
+        font-weight: bold;
+      }
+      a{
+        display: inline-block;
+        width: 140px;
+        height: 40px;
+        font-size: 16px;
+        font-family: 'Microsoft YaHei';
+        line-height: 40px;
+        text-align: center;
+        border-radius: 3%;
+      }
+      #mai{
+        background: #ee3531;
+        position: absolute;
+        left: 0;
+        top: 55%;
+        color: #fff;
+        &:hover{
+          background: #b22825;
+        }
+      }
+      #kan{
+        background: #fff;
+        border: 1px solid rgb(153,153,153);
+        position: absolute;
+        left: 170px;
+        top: 55%;
+        &:hover{
+          border: 1px solid rgb(51,51,51);
+        }
+      }
+    }
+  }
+}
